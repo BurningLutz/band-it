@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "pulp -w build",
+    "start:page": "pulp build -O --to public/index.js; parcel public/index.html",
     "build": "rm -rf dist/*; pulp build -O --to public/index.js; parcel build public/index.html --no-source-maps; rm -r public/index.js"
   },
   "devDependencies": {

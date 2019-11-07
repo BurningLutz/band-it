@@ -1,3 +1,37 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.band {
+  display: flex;
+
+  height: 100px;
+  width: 1080px;
+}
+
+.col {
+  flex-grow: 1;
+}
+
+.std-band {
+  height: 100px;
+  width: 1080px;
+
+  background: linear-gradient(to right, hsl(0deg, 100%, 50%),
+                                        hsl(60deg, 100%, 50%),
+                                        hsl(120deg, 100%, 50%),
+                                        hsl(180deg, 100%, 50%),
+                                        hsl(240deg, 100%, 50%),
+                                        hsl(300deg, 100%, 50%),
+                                        hsl(360deg, 100%, 50%));
+}
