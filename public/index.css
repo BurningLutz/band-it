@@ -16,7 +16,7 @@ body {
   display: flex;
 
   height: 100px;
-  width: 1080px;
+  width: 1440px;
 }
 
 .col {
@@ -25,7 +25,7 @@ body {
 
 .std-band {
   height: 100px;
-  width: 1080px;
+  width: 1440px;
 
   background: linear-gradient(to right, hsl(0deg, 100%, 50%),
                                         hsl(60deg, 100%, 50%),

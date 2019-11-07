@@ -3,6 +3,7 @@ module Band where
 import Prelude
 
 import Data.Array ((..))
+import Data.Int (toNumber)
 import Effect (Effect, foreachE)
 import HSL (hue)
 import Web.DOM (Element)
@@ -20,7 +21,7 @@ createHueBand = do
 
   let
     doc = toDocument hdoc
-    angles = 0 .. 360
+    angles = 0 .. 359
 
   band <- createElement "div" doc
   setClassName "band" band
@@ -30,14 +31,15 @@ createHueBand = do
 
   angles
     # flip foreachE \angle -> do
-        let
-          hsl = hue angle
+        foreachE [0.0, 0.5] \parts -> do
+          let
+            hsl = hue (toNumber angle + parts)
 
-        elem <- createElement "div" doc
+          elem <- createElement "div" doc
 
-        setClassName "col" elem
-        setAttribute "style" ("background: " <> show hsl) elem
+          setClassName "col" elem
+          setAttribute "style" ("background: " <> show hsl) elem
 
-        void $ appendChild (toNode elem) p
+          void $ appendChild (toNode elem) p
 
   pure band
